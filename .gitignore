@@ -1,0 +1,39 @@
+# Credenciales — nunca al repo
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.coverage
+
+# Docker
+docker-compose.override.yml
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+
+# Kubernetes
+kubeconfig
+*-secret.yaml
+
+# Editores
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
+logs/
+tmp/
