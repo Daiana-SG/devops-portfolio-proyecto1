@@ -13,3 +13,9 @@ En construcción — aprendiendo DevOps de forma autodidacta.
 
 ## Cómo correrlo localmente
 _Instrucciones próximamente_
+
+## Decisiones técnicas
+- **Docker multi-stage**: imagen final liviana sin dependencias de build
+- **GitHub Actions**: CI/CD nativo de GitHub, sin infraestructura extra
+- **FastAPI**: framework Python moderno, genera documentación automática
+
