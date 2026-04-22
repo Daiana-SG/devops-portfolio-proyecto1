@@ -1,21 +1,37 @@
-# DevOps Portfolio — Proyecto 1
+# Proyecto 1 — API Flask con CI/CD
 
-App containerizada con Docker y pipeline CI/CD automatizado.
+API REST en Flask con pipeline CI/CD automatizado usando GitHub Actions y Docker Hub.
 
-## Tecnologías
-- Python (FastAPI)
-- Docker multi-stage
+## Stack
+
+- Python + Flask
+- Docker multi-stage build
+- Docker Compose (app + PostgreSQL)
 - GitHub Actions
-- DockerHub
 
-## Estado
-En construcción — aprendiendo DevOps de forma autodidacta.
+## Pipeline CI/CD
 
-## Cómo correrlo localmente
-_Instrucciones próximamente_
+Cada push a `main` dispara automáticamente:
 
-## Decisiones técnicas
-- **Docker multi-stage**: imagen final liviana sin dependencias de build
-- **GitHub Actions**: CI/CD nativo de GitHub, sin infraestructura extra
-- **FastAPI**: framework Python moderno, genera documentación automática
+1. Build de la imagen Docker
+2. Push a Docker Hub con dos tags:
+   - `latest` — siempre apunta al último build
+   - `<sha>` — trazabilidad exacta del commit
 
+## Endpoints
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/` | Mensaje de bienvenida |
+| GET | `/health` | Health check |
+
+## Correr localmente
+
+```bash
+cp .env.example .env
+docker compose up
+```
+
+## Imagen pública
+
+`docker pull dmsgiordano/devops-portfolio-proyecto1:latest`
